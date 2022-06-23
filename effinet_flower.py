@@ -157,6 +157,8 @@ if __name__ == "__main__":
 
     model, history = create_model(train_batches, validation_batches, learning_rate)
     eval_results = model.evaluate(test_batches)
+    
+    metrics = ['loss', 'accuracy'] 
 
     for metric, value in zip(model.metrics_names, eval_results):
         print(metric + ': {:.4f}'.format(value))
