@@ -123,11 +123,11 @@ def create_model(train_batches, val_batches, learning_rate):
 
     model.summary()
 
-    model.fit(train_batches, epochs=args.epochs,
+    history = model.fit(train_batches, epochs=args.epochs,
               validation_data=val_batches,
               callbacks=[early_stop_callback])
 
-    return model
+    return model, history
 
 
 if __name__ == "__main__":
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     validation_batches = test_pipeline(ds_validation, batch_size)
     test_batches = test_pipeline(ds_test, batch_size)
 
-    model = create_model(train_batches, validation_batches, learning_rate)
+    model, history = create_model(train_batches, validation_batches, learning_rate)
     eval_results = model.evaluate(test_batches)
 
     for metric, value in zip(model.metrics_names, eval_results):
