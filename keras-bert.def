@@ -1,0 +1,15 @@
+BootStrap: localimage
+From: tensorflow_latest-gpu-py3.sif
+# singularity pull docker://tensorflow/tensorflow:latest-gpu-py3
+
+%post
+    apt-key del 3bf863cc
+    apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+    apt-get update
+    apt-get install -y libgl1-mesa-dev
+    apt install -y --no-install-recommends graphviz
+    pip install --upgrade pip
+    pip install keras==2.3 keras-bert sentencepiece scikit-learn transformers matplotlib pydot
+    pip install tensorflow-gpu==2.2.0
+    pip install tensorflow_hub
+    pip install opencv-python
