@@ -21,9 +21,9 @@ import tensorflow_datasets as tfds
 import argparse
 
 
-EPOCHS = 1
-BATCH_SIZE = 1
-LEARNING_RATE = 0.1
+EPOCHS = 5
+BATCH_SIZE = 32
+LEARNING_RATE = 0.001
 DROPOUT_RATE = 0.3
 EARLY_STOPPING_TRAIN_ACCURACY = 0.995
 TF_AUTOTUNE = tf.data.experimental.AUTOTUNE
