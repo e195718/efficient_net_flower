@@ -27,9 +27,9 @@ LEARNING_RATE = 0.001
 DROPOUT_RATE = 0.3
 EARLY_STOPPING_TRAIN_ACCURACY = 0.995
 TF_AUTOTUNE = tf.data.experimental.AUTOTUNE
-TF_HUB_MODEL_URL = 'https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet21k_s/classification/2'
+TF_HUB_MODEL_URL = 'https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_m/classification/2'
 TF_DATASET_NAME = 'oxford_flowers102'
-IMAGE_SIZE = (384, 384)
+IMAGE_SIZE = (480, 480)
 SHUFFLE_BUFFER_SIZE = 473
 MODEL_VERSION = '1'
 
