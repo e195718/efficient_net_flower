@@ -21,7 +21,7 @@ import tensorflow_datasets as tfds
 import argparse
 
 
-EPOCHS = 5
+EPOCHS = 50
 BATCH_SIZE = 32
 LEARNING_RATE = 0.001
 DROPOUT_RATE = 0.3
