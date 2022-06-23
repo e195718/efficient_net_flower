@@ -13,3 +13,4 @@ From: tensorflow_latest-gpu-py3.sif
     pip install tensorflow-gpu==2.2.0
     pip install tensorflow_hub
     pip install opencv-python
+    pip install tensorflow_datasets
