@@ -160,3 +160,44 @@ if __name__ == "__main__":
 
     for metric, value in zip(model.metrics_names, eval_results):
         print(metric + ': {:.4f}'.format(value))
+        
+    
+   plt.figure(figsize=(10, 5))  # グラフを表示するスペースを用意
+
+for i in range(len(metrics)):
+
+    metric = metrics[i]
+
+    plt.subplot(1, 2, i+1)  # figureを1×2のスペースに分け、i+1番目のスペースを使う
+    plt.title(metric)  # グラフのタイトルを表示
+    
+    plt_train = history.history[metric]  # historyから訓練データの評価を取り出す
+    plt_test = history.history['val_' + metric]  # historyからテストデータの評価を取り出す
+    
+    plt.plot(plt_train, label='training')  # 訓練データの評価をグラフにプロット
+    plt.plot(plt_test, label='test')  # テストデータの評価をグラフにプロット
+    plt.legend()  # ラベルの表示
+    
+plt.show()  # グラフの表示
+
+metrics = ['loss', 'accuracy']  # 使用する評価関数を指定
+ 
+plt.figure(figsize=(10, 5))  # グラフを表示するスペースを用意
+ 
+for i in range(len(metrics)):
+ 
+    metric = metrics[i]
+ 
+    plt.subplot(1, 2, i+1)  # figureを1×2のスペースに分け、i+1番目のスペースを使う
+    plt.title(metric)  # グラフのタイトルを表示
+    
+    plt_train = history.history[metric]  # historyから訓練データの評価を取り出す
+    plt_test = history.history['val_' + metric]  # historyからテストデータの評価を取り出す
+    
+    plt.plot(plt_train, label='training')  # 訓練データの評価をグラフにプロット
+    plt.plot(plt_test, label='validation')  # テストデータの評価をグラフにプロット
+    plt.legend()  # ラベルの表示
+    fig_path = 'Efficientnet_' + metric + '.png'
+    plt.savefig(fig_path)
+    
+plt.show()
